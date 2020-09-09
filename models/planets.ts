@@ -1,6 +1,6 @@
-import { join } from 'https://deno.land/std@0.66.0/path/mod.ts';
-import { BufReader } from 'https://deno.land/std@0.66.0/io/bufio.ts';
-import { parse } from 'https://deno.land/std@0.66.0/encoding/csv.ts';
+import { join } from 'https://deno.land/std@0.68.0/path/mod.ts';
+import { BufReader } from 'https://deno.land/std@0.68.0/io/bufio.ts';
+import { parse } from 'https://deno.land/std@0.68.0/encoding/csv.ts';
 import * as _ from 'https://deno.land/x/lodash@4.17.15-es/lodash.js';
 
 type Planet = Record<string, string>;
