@@ -1,4 +1,4 @@
-import * as log from 'https://deno.land/std@0.70.0/log/mod.ts';
+import * as log from 'https://deno.land/std@0.63.0/log/mod.ts';
 import * as _ from 'https://deno.land/x/lodash@4.17.15-es/lodash.js';
 
 interface Launch {
@@ -60,4 +60,14 @@ export function getOne(id: number) {
     return launches.get(id);
   }
   return null;
+}
+
+export function addOne(data: Launch) {
+  launches.set(
+    data.flightNumber,
+    Object.assign(data, {
+      upcoming: true,
+      customers: ['Zero to Mastery', 'NASA'],
+    })
+  );
 }

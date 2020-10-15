@@ -1,5 +1,5 @@
-import * as log from 'https://deno.land/std@0.70.0/log/mod.ts';
-import { Application, send } from 'https://deno.land/x/oak@v6.2.0/mod.ts';
+import * as log from 'https://deno.land/std@0.63.0/log/mod.ts';
+import { Application, send } from 'https://deno.land/x/oak@v5.4.0/mod.ts';
 import api from './api.ts';
 
 const app = new Application();
