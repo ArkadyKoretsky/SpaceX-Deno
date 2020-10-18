@@ -1,5 +1,4 @@
-import * as log from 'https://deno.land/std@0.63.0/log/mod.ts';
-import * as _ from 'https://deno.land/x/lodash@4.17.15-es/lodash.js';
+import { log, _ } from '../deps.ts';
 
 interface Launch {
   flightNumber: number;
@@ -60,6 +59,15 @@ export function getOne(id: number) {
     return launches.get(id);
   }
   return null;
+}
+
+export function removeOne(id: number) {
+  const aborted = launches.get(id);
+  if (aborted) {
+    aborted.upcoming = false;
+    aborted.success = false;
+  }
+  return aborted;
 }
 
 export function addOne(data: Launch) {

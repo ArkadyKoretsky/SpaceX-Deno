@@ -35,7 +35,13 @@ function loadPlanets() {
     });
 }
 
-function abortLaunch() {}
+function abortLaunch(id) {
+  return fetch(`/launches/${id}`, {
+    method: 'DELETE',
+  })
+    .then(loadLaunches)
+    .then(listUpcoming);
+}
 
 function submitLaunch() {
   const target = document.getElementById('planets-selector').value;
